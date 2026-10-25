@@ -198,7 +198,15 @@ $("memberList").addEventListener("click",e=>{const b=e.target.closest("[data-rem
 
 function start(){
  if(firebaseReady && window.firebase){try{firebase.initializeApp(FIREBASE_CONFIG);db=firebase.database();$("setupNotice").classList.add("hidden");
-   db.ref("fiestaPrep").on("value",snap=>{const data=snap.val();if(data){state.tasks=Array.isArray(data.tasks)?data.tasks:seedTasks.map(t=>({...t}));state.members=Array.isArray(data.members)&&data.members.length?data.members:[...defaultMembers];state.activity=Array.isArray(data.activity)?data.activity:[];}else{state={tasks:seedTasks.map(t=>({...t})),members:[...defaultMembers],activity:[]};db.ref("fiestaPrep").set(state)}render();renderActivity();});
+   db.ref("fiestaPrep").on("value",snap=>{const data=snap.val();if(data){state.tasks=Array.isArray(data.tasks)?data.tasks:seedTasks.map(t=>({...t}));const savedMembers = data.members;
+
+state.members = Array.isArray(savedMembers)
+  ? savedMembers
+  : savedMembers && typeof savedMembers === "object"
+    ? Object.keys(savedMembers)
+        .sort((a, b) => Number(a) - Number(b))
+        .map(key => savedMembers[key])
+    : [...defaultMembers];state.activity=Array.isArray(data.activity)?data.activity:[];}else{state={tasks:seedTasks.map(t=>({...t})),members:[...defaultMembers],activity:[]};db.ref("fiestaPrep").set(state)}render();renderActivity();});
  }catch(err){console.error(err);localLoad();render();renderActivity();toast("Could not connect to shared database. Check Firebase setup.");}}
  else{localLoad();render();renderActivity();}
  if(!localStorage.getItem("fiestaPrepName")){const name=prompt("What name should appear in the family activity feed? (You can use Mama, Papa, or your own name)");if(name&&name.trim())localStorage.setItem("fiestaPrepName",name.trim());}
