@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#a83f36">
+<title>Our Fiesta Prep | Family Checklist</title>
+<style>
+:root{--red:#a83f36;--red2:#7f2e2a;--gold:#e6b85c;--cream:#fff9ef;--ink:#382d2a;--muted:#7d7069;--green:#287a55;--line:#eadfd3;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff3df 0,#fffaf3 280px,#fffaf3 100%);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,#7f2e2a,#b54c3f);color:#fff;padding:28px 16px 34px;text-align:center;border-radius:0 0 28px 28px;box-shadow:0 8px 25px #7f2e2a22}
+header .eyebrow{letter-spacing:2px;text-transform:uppercase;font-size:.76rem;font-weight:800;color:#ffe5ae}h1{font-size:clamp(2rem,7vw,3.25rem);margin:8px 0 6px;line-height:1.05}header p{margin:0 auto;max-width:620px;color:#ffede1}.sound-toggle{margin-top:16px;border:1px solid #ffe5ae;background:#fff8e9;color:#7f2e2a;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer;box-shadow:0 3px 10px #4a171722}.sound-toggle:focus-visible{outline:3px solid #ffe5ae;outline-offset:3px}
+.wrap{max-width:1050px;margin:-18px auto 40px;padding:0 14px}.panel,.section-card{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 6px 22px #5b35220b}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:15px}.stat{background:var(--cream);border-radius:13px;padding:12px;text-align:center}.stat strong{display:block;font-size:1.6rem;color:var(--red)}.stat span{font-size:.78rem;color:var(--muted);font-weight:700}
+.progress-wrap{padding:0 17px 17px}.progress-label{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;font-weight:750;margin-bottom:8px}.bar{height:10px;background:#f1e7dc;border-radius:99px;overflow:hidden}.bar>div{height:100%;width:0;background:linear-gradient(90deg,#d78b40,#34845b);border-radius:99px;transition:width .35s}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select,.field,.task-title-input{border:1px solid #dfd1c4;border-radius:11px;padding:11px 12px;font:inherit;background:#fff;color:var(--ink);min-width:0}.toolbar input{flex:1;min-width:150px}.toolbar select{flex:1;min-width:130px}
+button{border:0;border-radius:11px;padding:11px 14px;font:inherit;font-weight:750;cursor:pointer;transition:transform .12s,filter .12s}button:active{transform:scale(.98)}.primary{background:var(--red);color:#fff}.secondary{background:#f6ead9;color:var(--red2)}.danger{background:#fff0ed;color:#9c3229}.small{padding:7px 9px;font-size:.8rem}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}.section-card{padding:15px;margin-bottom:13px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.section-head h2{font-size:1.05rem;margin:0}.pill{font-size:.75rem;background:#f8eddd;color:#885b2c;border-radius:99px;padding:5px 9px;font-weight:800;white-space:nowrap}
+.task{border:1px solid var(--line);border-radius:13px;padding:12px;margin:9px 0;background:#fff;display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;transition:background .2s,border .2s}.task.done{background:#f0faf3;border-color:#cde8d6}.task input[type=checkbox]{width:20px;height:20px;accent-color:var(--green);margin-top:2px;cursor:pointer}.task-name{font-weight:750;line-height:1.3;overflow-wrap:anywhere}.task.done .task-name{text-decoration:line-through;color:#718277}.task-meta{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:9px}.owner-select,.category-select{font:inherit;font-size:.8rem;border:1px solid #e5d8ca;background:#fffaf4;border-radius:8px;padding:6px 8px;max-width:100%}.owner-label{font-size:.76rem;color:var(--muted)}.task-note{font-size:.82rem;color:var(--muted);margin-top:5px}.task-actions{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}.category-title{margin:19px 0 5px;font-size:.88rem;color:var(--red2);font-weight:850;display:flex;justify-content:space-between}.category-title:first-child{margin-top:0}
+.side h2{margin:0 0 12px;font-size:1.05rem}.field-label{font-size:.8rem;font-weight:800;display:block;margin:10px 0 5px}.field{width:100%}.activity{padding:10px 0;border-bottom:1px solid #f0e7de;font-size:.82rem;line-height:1.45}.activity:last-child{border:0}.activity strong{color:var(--red2)}.activity time{display:block;color:#94877e;font-size:.72rem;margin-top:3px}.empty{color:var(--muted);font-size:.88rem;padding:12px 0}.setup{padding:14px;background:#fff8e9;border:1px solid #f0d7a7;border-radius:14px;margin:14px 0;font-size:.87rem;line-height:1.5}.setup strong{color:#7f3b2b}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;background:#263b30;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 8px 30px #0002;z-index:99;transition:.25s;max-width:90%;text-align:center;font-size:.9rem;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}.footer{text-align:center;color:var(--muted);font-size:.78rem;padding:15px}
+.hidden{display:none!important}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr}.summary{gap:7px;padding:10px}.stat{padding:10px 5px}.stat strong{font-size:1.35rem}.section-card{padding:12px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Many hands make light work ✨</div><h1>Our Fiesta Prep</h1><p>A shared family checklist — assign a task, tick it off, and celebrate every little win!</p><button id="soundToggle" class="sound-toggle" type="button" aria-pressed="true">🔊 Sounds: ON</button></header>
+<main class="wrap">
+  <section class="panel">
+    <div class="summary">
+      <div class="stat"><strong id="totalCount">0</strong><span>TOTAL TASKS</span></div>
+      <div class="stat"><strong id="doneCount">0</strong><span>COMPLETED</span></div>
+      <div class="stat"><strong id="leftCount">0</strong><span>LEFT TO DO</span></div>
+    </div>
+    <div class="progress-wrap"><div class="progress-label"><span>Fiesta readiness</span><span id="percent">0%</span></div><div class="bar"><div id="progressBar"></div></div></div>
+  </section>
+  <div id="setupNotice" class="setup"><strong>One-time setup needed:</strong> This page needs a Firebase Realtime Database to sync task changes across your family’s phones. Follow <b>README.md</b> in the repository and add your Firebase web configuration to this file. Until then, the checklist works only on this device.</div>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="🔎 Search tasks…">
+    <select id="ownerFilter"><option value="">All family members</option></select>
+    <select id="statusFilter"><option value="all">All tasks</option><option value="open">Not completed</option><option value="done">Completed</option></select>
+  </div>
+  <div class="layout">
+    <section id="taskSections"><div class="empty">Loading checklist…</div></section>
+    <aside class="side">
+      <section class="section-card">
+        <h2>➕ Add a task</h2>
+        <form id="addTaskForm">
+          <label class="field-label" for="newTask">Task name</label><input class="field" id="newTask" maxlength="140" required placeholder="e.g. Wash the front yard">
+          <label class="field-label" for="newCategory">Section</label><select class="field" id="newCategory"></select>
+          <label class="field-label" for="newOwner">Assign to</label><select class="field" id="newOwner"></select>
+          <label class="field-label" for="newNote">Notes (optional)</label><input class="field" id="newNote" maxlength="180" placeholder="Supplies, details, deadline…">
+          <button class="primary" type="submit" style="width:100%;margin-top:13px">Add task +</button>
+        </form>
+      </section>
+      <section class="section-card">
+        <h2>👨‍👩‍👧‍👦 Family members</h2>
+        <form id="memberForm" style="display:flex;gap:7px"><input id="memberName" class="field" maxlength="40" placeholder="Add a family member" required><button class="secondary" type="submit">Add</button></form>
+        <div id="memberList"></div>
+        <p class="task-note">You can change a task’s owner anytime using its “Assigned to” menu.</p>
+      </section>
+      <section class="section-card">
+        <div class="section-head"><h2>🔔 Family activity</h2><span class="pill">LIVE FEED</span></div>
+        <div id="activityFeed"><div class="empty">Activity will appear here.</div></div>
+      </section>
+    </aside>
+  </div>
+  <div class="footer">Made with ❤️ for the family • Fiesta Prep Checklist</div>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Firebase compat SDKs. Add your Firebase config in the CONFIG block below. -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>
+/*
+  FIREBASE CONFIG: replace the placeholder values below with your Firebase project's web config.
+  Instructions are in README.md. Do not put passwords or service-account keys here.
+*/
+const FIREBASE_CONFIG = {
+  apiKey: "PASTE_API_KEY_HERE",
+  authDomain: "PASTE_PROJECT_ID_HERE.firebaseapp.com",
+  databaseURL: "https://PASTE_PROJECT_ID_HERE-default-rtdb.firebaseio.com",
+  projectId: "PASTE_PROJECT_ID_HERE",
+  appId: "PASTE_APP_ID_HERE"
+};
+const firebaseReady = Object.values(FIREBASE_CONFIG).every(v => v && !String(v).includes("PASTE_"));
+const defaultMembers = ["Mama", "Papa", "First", "Dos", "Naya", "Other family member"];
+const categories = [
+"General Preparation","Living Room & Receiving Area","Bedrooms","Kitchen","Bathroom & Comfort Room","Dining Area",
+"Ceilings, Walls, Doors & Windows","Front Yard & Entrance","Backyard","Outdoor Washing & Laundry Area","Driveway & Guest Area",
+"Food & Ingredients","Cooking Equipment & Serving Area","Decorations & Fiesta Setup","Garbage, Sanitation & Pest Control","Final Inspection","After the Fiesta"
+];
+const seedTasks = [
+["Set the fiesta menu and estimate guest count","General Preparation"],["Make a budget and shopping list","General Preparation"],["Check tables, chairs, plates, glasses, and utensils","General Preparation"],["Assign jobs and check for repairs","General Preparation"],
+["Declutter and dust shelves, fans, lights, and furniture","Living Room & Receiving Area"],["Clean windows, mirrors, and glass doors","Living Room & Receiving Area"],["Clean sofa and arrange cushions","Living Room & Receiving Area"],["Sweep and mop the floor; arrange guest seating","Living Room & Receiving Area"],
+["Change bedsheets and pillowcases","Bedrooms"],["Organize clothes and personal belongings","Bedrooms"],["Dust furniture, sweep, and mop","Bedrooms"],
+["Clean refrigerator and discard expired food","Kitchen"],["Scrub sink, faucet, stovetop, and backsplash","Kitchen"],["Wash cooking utensils, pots, pans, and chopping boards","Kitchen"],["Organize ingredients and clear food-prep counters","Kitchen"],["Sweep and mop the kitchen floor; empty trash","Kitchen"],
+["Scrub toilet, sink, shower, mirrors, and tiles","Bathroom & Comfort Room"],["Refill hand soap and toilet paper; put out clean towels","Bathroom & Comfort Room"],["Check water supply, drainage, and bathroom bin","Bathroom & Comfort Room"],
+["Wipe dining table and chairs","Dining Area"],["Wash tablecloths and placemats","Dining Area"],["Arrange dining and buffet space","Dining Area"],
+["Remove cobwebs and dust ceiling corners","Ceilings, Walls, Doors & Windows"],["Wipe doors, handles, window grills, and sills","Ceilings, Walls, Doors & Windows"],["Check light bulbs and visible leaks","Ceilings, Walls, Doors & Windows"],
+["Collect trash and fallen leaves; sweep entrance and driveway","Front Yard & Entrance"],["Pull weeds and trim grass or shrubs","Front Yard & Entrance"],["Clean gate, fence, front door, and entrance steps","Front Yard & Entrance"],["Arrange and clean potted plants","Front Yard & Entrance"],
+["Clear backyard trash, leaves, and branches","Backyard"],["Organize tools, buckets, basins, and scrap materials","Backyard"],["Check for stagnant water and clear drains safely","Backyard"],
+["Scrub outdoor sink and wash area","Outdoor Washing & Laundry Area"],["Organize detergents, laundry, and washing supplies","Outdoor Washing & Laundry Area"],
+["Sweep driveway and wash dirty/slippery spots","Driveway & Guest Area"],["Set up outdoor tables, chairs, shade, and lighting","Driveway & Guest Area"],["Make sure walkways are clear and safe","Driveway & Guest Area"],
+["Finalize menu and buy ingredients","Food & Ingredients"],["Prepare ingredients that can safely be made ahead","Food & Ingredients"],["Prepare desserts, salads, drinks, and ice","Food & Ingredients"],["Keep raw meat separate and perishable food refrigerated","Food & Ingredients"],
+["Check LPG, stove, rice cooker, pots, pans, and appliances","Cooking Equipment & Serving Area"],["Prepare serving trays, ladles, plates, cups, and utensils","Cooking Equipment & Serving Area"],["Prepare drinking water, coolers, and leftover containers","Cooking Equipment & Serving Area"],
+["Put up decorations and prepare photo area","Decorations & Fiesta Setup"],["Test speakers, playlist, outdoor lights, and safe electrical connections","Decorations & Fiesta Setup"],
+["Prepare garbage bags and covered bins","Garbage, Sanitation & Pest Control"],["Store cleaning products away from food and children","Garbage, Sanitation & Pest Control"],["Cover food and remove standing water","Garbage, Sanitation & Pest Control"],
+["Do final sweep and mop; wipe counters and tables","Final Inspection"],["Check bathroom, hand soap, tissue, and towels","Final Inspection"],["Set out drinks, food covers, and guest seating","Final Inspection"],["Check lights, fans, and entrance","Final Inspection"],
+["Store leftovers safely and wash dishes","After the Fiesta"],["Collect trash and wipe tables","After the Fiesta"],["Sweep floors and secure the house","After the Fiesta"]
+].map((t,i)=>({id:"seed-"+i,title:t[0],category:t[1],owner:"Unassigned",note:"",done:false,createdAt:Date.now()}));
+
+let db=null, state={tasks:[],members:[...defaultMembers],activity:[]}, busy=false, previousDone={};
+
+const $=id=>document.getElementById(id);
+
+// Sound effects are generated locally with Web Audio; no audio files or downloads needed.
+let soundsOn = localStorage.getItem("fiestaSoundsOn") !== "false";
+let audioContext = null;
+function updateSoundButton(){
+ const b=$("soundToggle");
+ if(!b)return;
+ b.textContent=soundsOn?"🔊 Sounds: ON":"🔇 Sounds: OFF";
+ b.setAttribute("aria-pressed",String(soundsOn));
+}
+function playTone(freq, duration=0.09, type="sine", volume=0.045, delay=0){
+ if(!soundsOn)return;
+ try{
+  audioContext=audioContext||new (window.AudioContext||window.webkitAudioContext)();
+  if(audioContext.state==="suspended")audioContext.resume();
+  const start=audioContext.currentTime+delay;
+  const osc=audioContext.createOscillator(), gain=audioContext.createGain();
+  osc.type=type;osc.frequency.setValueAtTime(freq,start);
+  gain.gain.setValueAtTime(0.0001,start);
+  gain.gain.exponentialRampToValueAtTime(volume,start+0.012);
+  gain.gain.exponentialRampToValueAtTime(0.0001,start+duration);
+  osc.connect(gain);gain.connect(audioContext.destination);
+  osc.start(start);osc.stop(start+duration+0.02);
+ }catch(e){/* Sound is optional; checklist still works if audio is unavailable. */}
+}
+function playClick(){playTone(620,0.055,"sine",0.025)}
+function playTaskDone(){playTone(660,0.09,"sine",0.04);playTone(880,0.13,"sine",0.04,0.08)}
+function playProgressMilestone(){playTone(523,0.13,"sine",0.045);playTone(659,0.13,"sine",0.045,0.12);playTone(784,0.18,"sine",0.045,0.24)}
+function playVictory(){playTone(523,0.18,"triangle",0.055);playTone(659,0.18,"triangle",0.055,0.16);playTone(784,0.18,"triangle",0.055,0.32);playTone(1047,0.32,"triangle",0.06,0.48)}
+$("soundToggle")?.addEventListener("click",()=>{
+ soundsOn=!soundsOn;localStorage.setItem("fiestaSoundsOn",String(soundsOn));updateSoundButton();
+ if(soundsOn)playClick();
+});
+updateSoundButton();
+
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+document.addEventListener("click",e=>{if(e.target.closest("button")&&!e.target.closest("#soundToggle"))playClick()});
+function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2800)}
+function sayAction(who,action,task){return {id:"a"+Date.now()+Math.random().toString(16).slice(2,7),who,action,task,at:Date.now()}}
+function localLoad(){try{const raw=localStorage.getItem("fiestaPrepV1");if(raw)state=JSON.parse(raw);else state.tasks=seedTasks.map(t=>({...t}));}catch(e){state={tasks:seedTasks.map(t=>({...t})),members:[...defaultMembers],activity:[]}}}
+function localSave(){if(!firebaseReady)localStorage.setItem("fiestaPrepV1",JSON.stringify(state))}
+function log(action,task){const who=localStorage.getItem("fiestaPrepName")||"Family member";state.activity.unshift(sayAction(who,action,task));state.activity=state.activity.slice(0,35);if(db)db.ref("fiestaPrep/activity").set(state.activity);else localSave();renderActivity()}
+function persist(){if(db){db.ref("fiestaPrep").update({tasks:state.tasks,members:state.members});}else localSave();render()}
+function fillSelect(select,items,includeUnassigned=false){const old=select.value;select.innerHTML=(includeUnassigned?'<option value="Unassigned">Unassigned</option>':'')+items.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");if([...select.options].some(o=>o.value===old))select.value=old}
+function renderControls(){
+ const ownerFilter=$("ownerFilter"),newOwner=$("newOwner");
+ const oldFilter=ownerFilter.value;
+ ownerFilter.innerHTML='<option value="">All family members</option>'+state.members.map(m=>`<option value="${esc(m)}">${esc(m)}</option>`).join("")+'<option value="Unassigned">Unassigned</option>';
+ if([...ownerFilter.options].some(o=>o.value===oldFilter))ownerFilter.value=oldFilter;
+ fillSelect(newOwner,state.members,true);fillSelect($("newCategory"),categories);
+ $("memberList").innerHTML=state.members.map((m,i)=>`<div class="task-meta" style="justify-content:space-between;border-bottom:1px solid #f2e9df;padding:8px 0"><span>👤 ${esc(m)}</span>${m==="Other family member"?"":`<button class="small danger" data-remove-member="${i}" type="button">Remove</button>`}</div>`).join("");
+}
+function render(){
+ renderControls();
+ const search=$("search").value.trim().toLowerCase(),owner=$("ownerFilter").value,status=$("statusFilter").value;
+ const tasks=state.tasks.filter(t=>(!search||(t.title+" "+t.category+" "+t.note+" "+t.owner).toLowerCase().includes(search))&&(!owner||t.owner===owner)&&(status==="all"||(status==="done"&&t.done)||(status==="open"&&!t.done)));
+ const total=state.tasks.length,done=state.tasks.filter(t=>t.done).length,pct=total?Math.round(done/total*100):0;
+ $("totalCount").textContent=total;$("doneCount").textContent=done;$("leftCount").textContent=total-done;$("percent").textContent=pct+"%";$("progressBar").style.width=pct+"%";
+ const groups=categories.map(c=>[c,tasks.filter(t=>t.category===c)]).filter(([c,arr])=>arr.length);
+ if(!groups.length){$("taskSections").innerHTML='<div class="section-card empty">No tasks match these filters. Try another search or filter.</div>';return}
+ $("taskSections").innerHTML=groups.map(([cat,arr])=>`<section class="section-card"><div class="section-head"><h2>${esc(cat)}</h2><span class="pill">${arr.filter(t=>t.done).length}/${arr.length} done</span></div>${arr.map(t=>`
+ <article class="task ${t.done?"done":""}" data-task="${esc(t.id)}">
+ <input type="checkbox" aria-label="Mark ${esc(t.title)} complete" data-done="${esc(t.id)}" ${t.done?"checked":""}>
+ <div><div class="task-name">${esc(t.title)}</div>${t.note?`<div class="task-note">${esc(t.note)}</div>`:""}
+ <div class="task-meta"><span class="owner-label">Assigned to</span><select class="owner-select" data-owner="${esc(t.id)}" aria-label="Change owner for ${esc(t.title)}"><option value="Unassigned">Unassigned</option>${state.members.map(m=>`<option value="${esc(m)}" ${t.owner===m?"selected":""}>${esc(m)}</option>`).join("")}</select>${t.done?'<span class="pill" style="background:#e1f5e7;color:#287a55">✓ Completed</span>':""}</div>
+ <div class="task-actions"><button class="small secondary" data-edit="${esc(t.id)}" type="button">Edit details</button><button class="small danger" data-delete="${esc(t.id)}" type="button">Delete</button></div></div></article>`).join("")}</section>`).join("");
+}
+function renderActivity(){const feed=$("activityFeed");feed.innerHTML=state.activity?.length?state.activity.slice(0,12).map(a=>`<div class="activity"><strong>${esc(a.who||"Family member")}</strong> ${esc(a.action)} <b>${esc(a.task||"")}</b><time>${new Date(a.at||Date.now()).toLocaleString()}</time></div>`).join(""):'<div class="empty">No activity yet. Your family’s updates will show here.</div>'}
+function commitActivity(action,task){const who=localStorage.getItem("fiestaPrepName")||"Family member";state.activity.unshift(sayAction(who,action,task));state.activity=state.activity.slice(0,35);if(db)db.ref("fiestaPrep/activity").set(state.activity);else localSave();renderActivity()}
+$("taskSections").addEventListener("change",e=>{
+ if(e.target.matches("[data-done]")){const t=state.tasks.find(x=>x.id===e.target.dataset.done);if(!t)return;t.done=e.target.checked;t.completedAt=t.done?Date.now():null;commitActivity(t.done?"completed":"reopened",t.title);persist();toast(t.done?"🎉 Task completed! Great job!":"Task marked as not completed.");if(t.done){playTaskDone();celebrate();const total=state.tasks.length,done=state.tasks.filter(x=>x.done).length;const pct=total?Math.round(done/total*100):0;const previous=Number(localStorage.getItem("fiestaLastMilestone")||0);if(pct>=50&&previous<50){playProgressMilestone();localStorage.setItem("fiestaLastMilestone","50")}if(total>0&&done===total){playVictory();localStorage.setItem("fiestaLastMilestone","100")}}}
+ if(e.target.matches("[data-owner]")){const t=state.tasks.find(x=>x.id===e.target.dataset.owner);if(!t)return;const old=t.owner;t.owner=e.target.value;commitActivity(`reassigned a task from ${old} to ${t.owner}:`,t.title);persist();toast("Task owner updated!")}
+});
+function celebrate(){const emojis=["🎉","✨","👏","🥳","⭐"];toast(emojis[Math.floor(Math.random()*emojis.length)]+" Nice work! One more step closer to fiesta day!")}
+$("taskSections").addEventListener("click",e=>{
+ const edit=e.target.closest("[data-edit]");if(edit){const t=state.tasks.find(x=>x.id===edit.dataset.edit);if(!t)return;const title=prompt("Edit task name:",t.title);if(title===null)return;if(!title.trim()){toast("Task name cannot be empty.");return}const note=prompt("Add or edit notes (leave blank for none):",t.note||"");if(note===null)return;t.title=title.trim();t.note=note.trim();commitActivity("updated details for:",t.title);persist();toast("Task details saved.");}
+ const del=e.target.closest("[data-delete]");if(del){const t=state.tasks.find(x=>x.id===del.dataset.delete);if(t&&confirm(`Delete this task?\n\n${t.title}`)){state.tasks=state.tasks.filter(x=>x.id!==t.id);commitActivity("deleted task:",t.title);persist();toast("Task removed.")}}
+});
+$("addTaskForm").addEventListener("submit",e=>{e.preventDefault();const title=$("newTask").value.trim();if(!title)return;const t={id:"task-"+Date.now()+"-"+Math.random().toString(16).slice(2,6),title,category:$("newCategory").value,owner:$("newOwner").value,note:$("newNote").value.trim(),done:false,createdAt:Date.now()};state.tasks.push(t);commitActivity("added task:",title);persist();e.target.reset();toast("Task added to the family checklist!")});
+$("memberForm").addEventListener("submit",e=>{e.preventDefault();const name=$("memberName").value.trim();if(!name)return;if(state.members.some(m=>m.toLowerCase()===name.toLowerCase())){toast("That family member is already listed.");return}state.members.push(name);commitActivity("added family member:",name);persist();e.target.reset();toast("Family member added.")});
+$("memberList").addEventListener("click",e=>{const b=e.target.closest("[data-remove-member]");if(!b)return;const name=state.members[Number(b.dataset.removeMember)];if(!confirm(`Remove ${name} from the member list? Tasks assigned to them will become Unassigned.`))return;state.members=state.members.filter(m=>m!==name);state.tasks.forEach(t=>{if(t.owner===name)t.owner="Unassigned"});commitActivity("removed family member:",name);persist();toast("Family member removed.")});
+["search","ownerFilter","statusFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+
+function start(){
+ if(firebaseReady && window.firebase){try{firebase.initializeApp(FIREBASE_CONFIG);db=firebase.database();$("setupNotice").classList.add("hidden");
+   db.ref("fiestaPrep").on("value",snap=>{const data=snap.val();if(data){state.tasks=Array.isArray(data.tasks)?data.tasks:seedTasks.map(t=>({...t}));state.members=Array.isArray(data.members)&&data.members.length?data.members:[...defaultMembers];state.activity=Array.isArray(data.activity)?data.activity:[];}else{state={tasks:seedTasks.map(t=>({...t})),members:[...defaultMembers],activity:[]};db.ref("fiestaPrep").set(state)}render();renderActivity();});
+ }catch(err){console.error(err);localLoad();render();renderActivity();toast("Could not connect to shared database. Check Firebase setup.");}}
+ else{localLoad();render();renderActivity();}
+ if(!localStorage.getItem("fiestaPrepName")){const name=prompt("What name should appear in the family activity feed? (You can use Mama, Papa, or your own name)");if(name&&name.trim())localStorage.setItem("fiestaPrepName",name.trim());}
+}
+start();
+</script>
+</body>
+</html>
