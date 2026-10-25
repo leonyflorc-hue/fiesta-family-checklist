@@ -163,8 +163,7 @@ function renderControls(){
  ownerFilter.innerHTML='<option value="">All family members</option>'+state.members.map(m=>`<option value="${esc(m)}">${esc(m)}</option>`).join("")+'<option value="Unassigned">Unassigned</option>';
  if([...ownerFilter.options].some(o=>o.value===oldFilter))ownerFilter.value=oldFilter;
  fillSelect(newOwner,state.members,true);fillSelect($("newCategory"),categories);
- $("memberList").innerHTML=state.members.map((m,i)=>`<div class="task-meta" style="justify-content:space-between;border-bottom:1px solid #f2e9df;padding:8px 0"><span>👤 ${esc(m)}</span>${m==="Other family member"?"":`<button class="small danger" data-remove-member="${i}" type="button">Remove</button>`}</div>`).join("");
-}
+ $("memberList").innerHTML=state.members.map((m,i)=>"<div class="task-meta" style="justify-content:space-between;border-bottom:1px solid #f2e9df;padding:8px 0"><span>👤 ${esc(m)}</span><div style="display:flex;gap:6px">${m==="Other family member"?"":"<button class="small secondary" data-rename-member="${i}" type="button">Rename</button><button class="small danger" data-remove-member="${i}" type="button">Remove</button>"}</div></div>").join("");
 function render(){
  renderControls();
  const search=$("search").value.trim().toLowerCase(),owner=$("ownerFilter").value,status=$("statusFilter").value;
